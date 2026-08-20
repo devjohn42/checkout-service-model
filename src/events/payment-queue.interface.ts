@@ -3,7 +3,7 @@ import { StringifyOptions } from "querystring"
 export interface PaymentOrderMessage {
   orderId: string
   userId: string
-  amount: string
+  amount: number
   items: Array<{
     productId: string
     quantity: number
@@ -12,4 +12,8 @@ export interface PaymentOrderMessage {
   paymentMethod: string
   description?: string
   createdAt?: Date
+  metadata?: {
+    service: string
+    timestamp: string
+  }
 }
